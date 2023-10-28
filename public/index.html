@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./tailwind.css">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .none {
+      display: none;
+    }
+
+    .highlight {
+      background-color: hsl(217, 12%, 63%);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Rating state start -->
+  <div
+    class="bg-gradient-to-b from-DarkBlue to-VeryDarkBlue md:w-[30%] h-[50vh] w-[85%] max-w-[30rem] min-w-[20rem] mx-auto mt-28 rounded-2xl p-9 border border-DarkBlue"
+    id="main">
+    <img src="./images/icon-star.svg" alt="" class=" bg-DarkBlue p-2 rounded-full ">
+    <h1 class="text-white pt-3 font-semibold">How did we do?</h1>
+    <p class="text-LightGrey text-xs my-3">Please let us know how we did with your support request. All feedback is
+      appreciated to help us improve our offering!
+    </p>
+    <div class="flex justify-between items-center" id="button">
+      <button id="first" onclick="rate(this)"
+        class="bg-DarkBlue rounded-full p-1 w-10 h-10 highlighted hover:bg-Orange hover:text-white cursor-pointer text-LightGrey">
+        1
+      </button>
+      <button id="second" onclick="rate(this)"
+        class="bg-DarkBlue rounded-full p-1 w-10 h-10 highlighted hover:bg-Orange hover:text-white cursor-pointer text-LightGrey">
+        2
+      </button>
+      <button id="third" onclick="rate(this)"
+        class="bg-DarkBlue rounded-full p-1 w-10 h-10 highlighted hover:bg-Orange hover:text-white cursor-pointer text-LightGrey">
+        3
+      </button>
+      <button id="fourth" onclick="rate(this)"
+        class="bg-DarkBlue rounded-full p-1 w-10 h-10 highlighted hover:bg-Orange hover:text-white cursor-pointer text-LightGrey">
+        4
+      </button>
+      <button id="fifth" onclick="rate(this)"
+        class="bg-DarkBlue rounded-full p-1 w-10 h-10 highlighted hover:bg-Orange hover:text-white cursor-pointer text-LightGrey">
+        5
+      </button>
+    </div>
+    <button class="bg-Orange text-white text-center text-sm mt-7
+     uppercase hover:bg-white hover:text-Orange rounded-3xl p-2 w-full cursor-pointer" id="submit">
+      Submit
+    </button>
+  </div>
+
+  <p class="text-center font-bold text-Orange none cursor-pointer mt-5" id="goback">
+    >> Go back</p>
+
+
+
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+
+  <div
+    class="bg-gradient-to-b from-DarkBlue to-VeryDarkBlue md:w-[30%] h-[50vh] w-[85%] max-w-[30rem] min-w-[20rem] mx-auto mt-28 rounded-2xl py-9 px-7 border border-DarkBlue hidden"
+    id="success">
+    <img src="./images/illustration-thank-you.svg" alt="" class="w-[45%] mx-auto">
+    <p class="bg-DarkBlue p-1 text-center mx-auto rounded-3xl text-Orange text-sm w-[67%] my-3">You selected <span
+        id="select"></span> out of
+      5</p>
+    <h1 class="text-white pt-3 font-semibold text-center text-xl">Thank you!</h1>
+    <p class="text-LightGrey text-xs my-3 text-center">We appreciate you taking the time to give a rating. If you
+      ever
+      need more
+      support,
+      don’t hesitate to get in touch!</p>
+  </div>
+  <!-- Thank you state end -->
+  <script src="./rating.js"></script>
+  <script src="./promise.js"></script>
+</body>
+
+</html>
